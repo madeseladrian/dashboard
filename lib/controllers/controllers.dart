@@ -1,0 +1,1 @@
+export 'menu_app_controller.dart';
