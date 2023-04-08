@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -6,7 +7,16 @@ import 'controllers/controllers.dart';
 import 'pages/pages.dart';
 import '../constants.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyCw3cf2LnEKn-kLngQU6BrSzeTb_gwIqDI",
+      projectId: "alfa-dashboard",
+      messagingSenderId: "43746613648",
+      appId: "1:43746613648:web:2778c7022c34e7d9d9bb15",
+    )
+  );
   runApp(const MyApp());
 }
 
